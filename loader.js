@@ -70,7 +70,7 @@ function fnChangeBG() {
 
       modeIcon[0].innerHTML = "<i class='material-icons medium'>adjust</i>";
       modeIcon[1].innerHTML =
-         "<i class='material-icons small'  style='transform: translateY(25%);color: #6f4037;'>adjust</i>";
+         "<i class='material-icons small'  style='transform: translateY(25%);color: #462822;'>adjust</i>";
       for (let i = 0; i < headers.length; i++) {
          headers[i].style.color = "white";
       }
