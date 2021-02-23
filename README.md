@@ -1,7 +1,11 @@
 # cafeKing
 
-Project made with materilaize
+Project made with materialize CSS
 
 # Thanks to
 
 Hitesh Choudhary
+
+# My website
+
+https://mohdaffancodes.github.io/cafeKing/
