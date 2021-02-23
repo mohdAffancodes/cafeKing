@@ -51,6 +51,13 @@
       />
       <!--main css-->
       <link rel="stylesheet" href="style.css" />
+      <!-- Compiled and minified materialize JavaScript -->
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+         defer
+      ></script>
+      <!--main js-->
+      <script src="loader.js" defer></script>
    </head>
 
    <body>
@@ -142,14 +149,14 @@
                </a>
             </li>
             <li>
-               <a
-                  onclick="fnCoffeeMode();"
-                  class="myTabs coffeeMode valign-wrapper"
-               >
+               <a onclick="fnCoffeeModeForMobile();" class="myTabs coffeeMode">
                   <span class="modeIcon">
                      <i
                         class="material-icons small"
-                        style="transform: translateY(25%)"
+                        style="
+                           transform: translateY(25%);
+                           color: rgb(104, 104, 104);
+                        "
                      >
                         panorama_fish_eye
                      </i>
@@ -203,7 +210,7 @@
                   Officiis ipsa ex eum.
                </div>
                <div class="mediaMarginTop col center l4 s12">
-                  <div class="waves-effect waves-block waves-light">
+                  <div>
                      <img
                         src="images/cup.png"
                         style="object-fit: contain"
@@ -340,7 +347,7 @@
                <h2 class="header" style="font-family: 'Pacifico', cursive">
                   About
                </h2>
-               <p class="grey-text text-darken-4">
+               <p class="grey-text text-darken-4 readMoreText">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
                   accusantium consequatur quisquam, illum autem harum nulla?
                   Nesciunt pariatur laudantium rerum mollitia quisquam. Delectus
@@ -351,8 +358,9 @@
                </p>
                <a
                   href="#about"
-                  class="btn wave-effect waves-light"
+                  class="btn wave-effect waves-light readMoreBtn"
                   style="background: #6f4037 !important"
+                  onclick="fnReadMore();"
                >
                   Read more
                </a>
@@ -538,8 +546,14 @@
                <div class="row center">
                   <div class="col l6 s12">
                      <h4 class="white-text">Contact Us</h4>
-                     <p class="grey-text">XYZ 507, Pune,India</p>
-                     <p class="grey-text">+917771247890</p>
+                     <p class="grey-text">
+                        <i class="material-icons tiny">place</i>
+                        XYZ 507, Pune,India
+                     </p>
+                     <p class="grey-text">
+                        <i class="material-icons tiny">call</i>
+                        +917771247890
+                     </p>
                   </div>
                   <div class="col l6 s12">
                      <h4 class="white-text">Social Media</h4>
@@ -550,7 +564,7 @@
                         <li>
                            <a href="#" class="grey-text"> Twitter </a>
                         </li>
-                        <li><a href="#" class="grey-text">Twitter</a></li>
+                        <li><a href="#" class="grey-text"> Instagram </a></li>
                      </ul>
                   </div>
                </div>
@@ -580,8 +594,4 @@
          </footer>
       </section>
    </body>
-   <!-- Compiled and minified materialize JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <!--main js-->
-   <script src="loader.js"></script>
 </html>
