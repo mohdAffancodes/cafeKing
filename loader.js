@@ -57,49 +57,51 @@ function fnCoffeeModeForMobile() {
 }
 
 function fnChangeBG() {
-   //html element
+   //html elements
    let modeIcon = document.querySelectorAll(".modeIcon");
-   let headers = document.querySelectorAll(".header");
    //css var
    let root = document.querySelector(":root");
    let rootStyle = getComputedStyle(root);
-
+   //.Using number CSS var as a boolean
    if (rootStyle.getPropertyValue("--number") == 0) {
+      //.Changing background_color to coffeeMode
       root.style.setProperty("--default", "#c07060");
       root.style.setProperty("--number", 1);
-
+      //.Icon for desktop
       modeIcon[0].innerHTML = "<i class='material-icons medium'>adjust</i>";
+      //.Icon for mobile
       modeIcon[1].innerHTML =
          "<i class='material-icons small'  style='transform: translateY(25%);color: #5c352d;'>adjust</i>";
-      for (let i = 0; i < headers.length; i++) {
-         headers[i].style.color = "white";
-      }
    } else if (rootStyle.getPropertyValue("--number") == 1) {
+      //.changing background_color to default(white)
       root.style.setProperty("--default", "white");
       root.style.setProperty("--number", 0);
-
+      //.Icon for desktop
       modeIcon[0].innerHTML =
          "<i class='material-icons medium'>panorama_fish_eye</i>";
+      //.Icon for mobile
       modeIcon[1].innerHTML =
          "<i class='material-icons small' style='transform: translateY(25%);color: rgb(104, 104, 104);'>panorama_fish_eye</i>";
-      for (let i = 0; i < headers.length; i++) {
-         headers[i].style.color = "black";
-      }
    }
 }
 
+//Everything related to read more in about section
 let btn = document.querySelector(".readMoreBtn");
 btn.innerHTML = "Read more";
-let text = document.querySelector(".readMoreText");
+let readMoreText = document.querySelector(".readMoreText");
 
 function fnReadMore() {
    if (btn.textContent == "Read more") {
-      text.innerHTML +=
+      //.adding text to About
+      readMoreText.innerHTML +=
          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae maxime nisi tempora reprehenderit provident sequi deserunt consequatur enim cumque soluta iure numquam amet saepe temporibus, aliquam et voluptatem esse quae quos corporis sapiente? Veniam, rerum minima ullam quos recusandae numquam tempore repellendus deleniti velit voluptatum? Laborum, soluta ipsum vitae asperiores voluptate vero veritatis praesentium aperiam minus quam saepe, reiciendis omnis quisquam aut vel quia porro quis modi iste rem enim, explicabo delectus nihil. Vitae excepturi nesciunt alias sit. Dolorum repellendus numquam aliquid in maxime porro quasi deleniti eum. Vitae deserunt optio nulla voluptates dolorem corporis adipisci eos sapiente aspernatur aliquam!";
+      //.Changing btn text
       btn.innerHTML = "Read less";
    } else if (btn.textContent == "Read less") {
-      text.innerHTML =
+      //.removing extra text from about
+      readMoreText.innerHTML =
          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo accusantium consequatur quisquam, illum autem harum nulla?     Nesciunt pariatur laudantium rerum mollitia quisquam. Delectus repellendus tempora enim. Itaque molestiae facere accusamus,    alias laudantium consequuntur vero cum odio officia veniam dolorum dignissimos aut mollitia suscipit labore minima possimus sed perferendis, est optio.";
+      //.Changing btn text
       btn.innerHTML = "Read more";
    }
 }

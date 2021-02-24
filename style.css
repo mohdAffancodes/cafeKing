@@ -54,12 +54,12 @@ nav .brand-logo {
 }
 
 .slider .indicators .indicator-item.active {
-   background-color: #6f4037;
+   background-color: #462822;
    border: 0px;
 }
 .slider .indicators .indicator-item {
    background-color: transparent;
-   border: 2px solid #6f4037;
+   border: 2px solid #462822;
 }
 
 .move {
