@@ -4,7 +4,7 @@ Project made with materialize CSS
 
 # Thanks to
 
-Hitesh Choudhary & NetNinja
+Hitesh Choudhary & Net Ninja
 
 # My website
 
