@@ -5,7 +5,46 @@ document.addEventListener("DOMContentLoaded", () => {
    fnCarousel();
    //.calling functions
    fnValignIndicators();
+   //.launching the sidenav on right swipe
+   fnOpenSidenavOnSwipe();
 });
+
+function fnOpenSidenavOnSwipe() {
+   let touchstartX = 0;
+   let touchendX = 0;
+
+   document.addEventListener(
+      "touchstart",
+      (e) => {
+         e.preventDefault();
+         touchstartX = e.changedTouches[0].screenX;
+         touchstartY = e.changedTouches[0].screenY;
+         //.console.log("start");
+      },
+      false
+   );
+
+   document.addEventListener(
+      "touchend",
+      (e) => {
+         e.preventDefault();
+         touchendX = e.changedTouches[0].screenX;
+         touchendY = e.changedTouches[0].screenY;
+         //.console.log("end");
+         fnRightSwipe();
+      },
+      false
+   );
+
+   const fnRightSwipe = () => {
+      if (touchendX > touchstartX) {
+         //.console.log("swiped right!");
+         let elem = document.querySelector(".sidenav");
+         let instance = M.Sidenav.init(elem, {});
+         instance.open();
+      }
+   };
+}
 
 function fnValignIndicators() {
    let vAligned = false;
