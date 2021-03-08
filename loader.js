@@ -10,35 +10,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fnOpenSidenavOnSwipe() {
-   let touchstartX = 0;
-   let touchendX = 0;
-
+   //.Touch coordinates
+   let touchstartX,
+      touchendX,
+      touchstartY,
+      touchendY = 0;
+   //.touch start
    document.addEventListener(
       "touchstart",
       (e) => {
-         e.preventDefault();
          touchstartX = e.changedTouches[0].screenX;
          touchstartY = e.changedTouches[0].screenY;
-         //.console.log("start");
+         //.console.log("start " + touchstartX);
       },
       false
    );
-
+   //.touch end
    document.addEventListener(
       "touchend",
       (e) => {
-         e.preventDefault();
          touchendX = e.changedTouches[0].screenX;
          touchendY = e.changedTouches[0].screenY;
-         //.console.log("end");
+         //.console.log("end " + touchendX);
          fnRightSwipe();
       },
       false
    );
-
+   //.right swipe
    const fnRightSwipe = () => {
-      if (touchendX > touchstartX) {
-         //.console.log("swiped right!");
+      if (
+         touchendX > touchstartX &&
+         touchendY > touchstartY - 100 &&
+         touchendY < touchstartY + 100
+      ) {
+         //.console.log("right");
          let elem = document.querySelector(".sidenav");
          let instance = M.Sidenav.init(elem, {});
          instance.open();
