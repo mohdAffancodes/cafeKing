@@ -5,8 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
    fnCarousel();
    //.calling functions
    fnValignIndicators();
-   //.launching the sidenav on right swipe
-   fnOpenSidenavOnSwipe();
+   //.launching the sidenav on right swipe for mobile only
+   if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+         navigator.userAgent
+      )
+   ) {
+      fnOpenSidenavOnSwipe();
+   }
 });
 
 function fnOpenSidenavOnSwipe() {
@@ -38,12 +44,19 @@ function fnOpenSidenavOnSwipe() {
    );
    //.right swipe
    const fnRightSwipe = () => {
+      //.getting the translateX property
+      let sideNav = document.querySelector(".sidenav");
+      var style = window.getComputedStyle(sideNav);
+      var translateX = new WebKitCSSMatrix(style.transform);
+      //.console.log(translateX.m41);
       if (
+         //#if the translateX is (not 0) then this code will run
+         translateX.m41 !== 0 &&
          touchendX > touchstartX &&
          touchendY > touchstartY - 100 &&
          touchendY < touchstartY + 100
       ) {
-         //.console.log("right");
+         //.console.log("swiped right");
          let elem = document.querySelector(".sidenav");
          let instance = M.Sidenav.init(elem, {});
          instance.open();
