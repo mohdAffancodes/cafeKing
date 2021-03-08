@@ -46,15 +46,15 @@ function fnOpenSidenavOnSwipe() {
    const fnRightSwipe = () => {
       //.getting the translateX property
       let sideNav = document.querySelector(".sidenav");
-      var style = window.getComputedStyle(sideNav);
-      var translateX = new WebKitCSSMatrix(style.transform);
+      let style = window.getComputedStyle(sideNav);
+      let translateX = new WebKitCSSMatrix(style.transform);
       //.console.log(translateX.m41);
       if (
          //#if the translateX is (not 0) then this code will run
          translateX.m41 !== 0 &&
          touchendX > touchstartX &&
-         touchendY > touchstartY - 100 &&
-         touchendY < touchstartY + 100
+         touchendY > touchstartY - 50 && //.50px above
+         touchendY < touchstartY + 50 //.50px below
       ) {
          //.console.log("swiped right");
          let elem = document.querySelector(".sidenav");
