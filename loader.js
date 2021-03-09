@@ -110,17 +110,23 @@ function fnCarousel() {
 
 function fnCoffeeModeForMobile() {
    fnCloseSidenav();
-   fnChangeBG();
+   fnChangeTheme();
 }
 
-function fnChangeBG() {
-   //html elements
+function fnChangeTheme() {
+   //.html elements
    let modeIcon = document.querySelectorAll(".modeIcon");
-   //css var
+   //.the header elements
+   let headers = document.querySelectorAll(".header");
+   //.css var
    let root = document.querySelector(":root");
    let rootStyle = getComputedStyle(root);
    //.Using number CSS var as a boolean
    if (rootStyle.getPropertyValue("--number") == 0) {
+      //.changing the headers color to white
+      for (let i = 0; i < headers.length; i++) {
+         headers[i].style.color = "white";
+      }
       //.Changing background_color to coffeeMode
       root.style.setProperty("--default", "#c07060");
       root.style.setProperty("--number", 1);
@@ -130,6 +136,10 @@ function fnChangeBG() {
       modeIcon[1].innerHTML =
          "<i class='material-icons small'  style='transform: translateY(25%);color: #5c352d;'>adjust</i>";
    } else if (rootStyle.getPropertyValue("--number") == 1) {
+      //.changing the headers color to black
+      for (let i = 0; i < headers.length; i++) {
+         headers[i].style.color = "black";
+      }
       //.changing background_color to default(white)
       root.style.setProperty("--default", "white");
       root.style.setProperty("--number", 0);
