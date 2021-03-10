@@ -52,7 +52,7 @@ function fnOpenSidenavOnSwipe() {
       if (
          //#if the translateX is (not 0) then this code will run
          translateX.m41 !== 0 &&
-         touchendX > touchstartX &&
+         touchendX > touchstartX + 50 && //.50px more
          touchendY > touchstartY - 50 && //.50px above
          touchendY < touchstartY + 50 //.50px below
       ) {
