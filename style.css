@@ -153,10 +153,10 @@ nav .brand-logo {
    background-color: #6f4037 !important;
 }
 
-.switch label input[type="checkbox"]:checked + .lever::after {
-   background-color: white !important;
-}
-
 .modeIcon {
    cursor: pointer;
+}
+
+.fixed-action-btn ul {
+   border-top:1px solid white;
 }
