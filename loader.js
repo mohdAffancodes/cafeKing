@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
    ) {
       fnOpenSidenavOnSwipe();
    }
+   var elem = document.querySelector(".fixed-action-btn");
+   var instance = M.FloatingActionButton.init(elem, {
+      toolbarEnabled: true,
+   });
 });
 
 function fnOpenSidenavOnSwipe() {
@@ -135,6 +139,8 @@ function fnChangeTheme() {
       //.Icon for mobile
       modeIcon[1].innerHTML =
          "<i class='material-icons small'  style='transform: translateY(25%);color: #5c352d;'>adjust</i>";
+
+      modeIcon[2].innerHTML = "<i class='material-icons small'>adjust</i>";
    } else if (rootStyle.getPropertyValue("--number") == 1) {
       //.changing the headers color to black
       for (let i = 0; i < headers.length; i++) {
@@ -149,6 +155,9 @@ function fnChangeTheme() {
       //.Icon for mobile
       modeIcon[1].innerHTML =
          "<i class='material-icons small' style='transform: translateY(25%);color: rgb(104, 104, 104);'>panorama_fish_eye</i>";
+
+      modeIcon[2].innerHTML =
+         "<i class='material-icons small' >panorama_fish_eye</i>";
    }
 }
 
@@ -171,4 +180,13 @@ function fnReadMore() {
       //.Changing btn text
       btn.innerHTML = "Read more";
    }
+}
+
+function fnOpenTooltip() {
+   var elem = document.querySelector(".tooltipped");
+   var instance = M.Tooltip.init(elem, {});
+   instance.open();
+   setTimeout(() => {
+      instance.close();
+   }, 1000 / 4);
 }

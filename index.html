@@ -66,7 +66,7 @@
             <div class="nav-wrapper">
                <a href="#" class="brand-logo"> &copy;CafeKing </a>
                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-                  <i class="material-icons">menu</i>
+                  <i class="material-icons" style="font-size: 30px">menu</i>
                </a>
                <ul id="nav-mobile" class="right hide-on-med-and-down">
                   <li>
@@ -157,15 +157,15 @@
                      <i
                         class="material-icons small"
                         style="
-                           transform: translateY(25%);
                            color: rgb(104, 104, 104);
+                           transform: translateY(25%);
                         "
                      >
                         panorama_fish_eye
                      </i>
                   </span>
-                  <span class="coffeeMode" style="margin-left: 25px !important">
-                     Coffee Mode
+                  <span class="coffeeMode" style="margin-left: 25px !important"
+                     >Coffee Mode
                   </span>
                </a>
             </li>
@@ -173,6 +173,46 @@
       </section>
 
       <section class="homeSpace"></section>
+
+      <div class="fixed-action-btn toolbar">
+         <a class="btn-floating btn-large" onclick="fnOpenTooltip();">
+            <i class="large material-icons valign-wrapper">menu</i>
+         </a>
+         <ul class="hideList">
+            <li>
+               <a href="#home" onclick="fnCloseSidenav();" class="myTabs">
+                  <i class="material-icons small">home</i>
+               </a>
+            </li>
+            <li>
+               <a href="#coffee" onclick="fnCloseSidenav();" class="myTabs">
+                  <i class="material-icons small">free_breakfast</i>
+               </a>
+            </li>
+            <li>
+               <a href="#about" onclick="fnCloseSidenav();" class="myTabs">
+                  <i class="material-icons small">people</i>
+               </a>
+            </li>
+            <li>
+               <a href="#contact" onclick="fnCloseSidenav();" class="myTabs">
+                  <i class="material-icons small">call</i>
+               </a>
+            </li>
+            <li>
+               <a
+                  class="myTabs coffeeMode tooltipped"
+                  data-position="top"
+                  data-tooltip="Change Theme"
+                  onclick="fnCoffeeModeForMobile();"
+               >
+                  <span class="modeIcon">
+                     <i class="material-icons small"> panorama_fish_eye </i>
+                  </span>
+               </a>
+            </li>
+         </ul>
+      </div>
 
       <section class="fSlider">
          <div class="slider">
