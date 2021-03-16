@@ -11,62 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
          navigator.userAgent
       )
    ) {
-      fnOpenSidenavOnSwipe();
+      let tooltip = document.querySelector(".tooltipped");
+      tooltip.addEventListener("touchstart", () => {
+         setTimeout(() => {
+            let instance = M.Tooltip.init(tooltip, {});
+            instance.close();
+         }, 100);
+         //alert("touched");
+      });
    }
    var elem = document.querySelector(".fixed-action-btn");
    var instance = M.FloatingActionButton.init(elem, {
       toolbarEnabled: true,
    });
 });
-
-function fnOpenSidenavOnSwipe() {
-   //.Touch coordinates
-   let touchstartX,
-      touchendX,
-      touchstartY,
-      touchendY = 0;
-   //.touch start
-   document.addEventListener(
-      "touchstart",
-      (e) => {
-         touchstartX = e.changedTouches[0].screenX;
-         touchstartY = e.changedTouches[0].screenY;
-         //.console.log("start " + touchstartX);
-      },
-      false
-   );
-   //.touch end
-   document.addEventListener(
-      "touchend",
-      (e) => {
-         touchendX = e.changedTouches[0].screenX;
-         touchendY = e.changedTouches[0].screenY;
-         //.console.log("end " + touchendX);
-         fnRightSwipe();
-      },
-      false
-   );
-   //.right swipe
-   const fnRightSwipe = () => {
-      //.getting the translateX property
-      let sideNav = document.querySelector(".sidenav");
-      let style = window.getComputedStyle(sideNav);
-      let translateX = new WebKitCSSMatrix(style.transform);
-      //.console.log(translateX.m41);
-      if (
-         //#if the translateX is (not 0) then this code will run
-         translateX.m41 !== 0 &&
-         touchendX > touchstartX + 50 && //.50px more
-         touchendY > touchstartY - 50 && //.50px above
-         touchendY < touchstartY + 50 //.50px below
-      ) {
-         //.console.log("swiped right");
-         let elem = document.querySelector(".sidenav");
-         let instance = M.Sidenav.init(elem, {});
-         instance.open();
-      }
-   };
-}
 
 function fnValignIndicators() {
    let vAligned = false;
@@ -188,5 +146,5 @@ function fnOpenTooltip() {
    instance.open();
    setTimeout(() => {
       instance.close();
-   }, 1000 / 4);
+   }, 1000 / 2);
 }
