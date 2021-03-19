@@ -40,6 +40,11 @@ body {
    height: 64px;
 }
 
+.nav-fixed {
+   z-index: 10;
+   position: fixed;
+}
+
 .myTabs {
    font-size: 20px;
 }
@@ -104,10 +109,6 @@ nav .brand-logo {
 }
 
 @media only screen and (min-width: 600px) {
-   .nav-fixed {
-      z-index: 10;
-      position: fixed;
-   }
    .fixed-action-btn {
       pointer-events: none;
       visibility: hidden;
@@ -116,8 +117,9 @@ nav .brand-logo {
 
 @media only screen and (max-width: 600px) {
    .homeSpace {
-      height: 0px;
+      height: 56px;
    }
+
    .slider {
       height: 300px !important;
    }
@@ -153,10 +155,10 @@ nav .brand-logo {
    background-color: #6f4037 !important;
 }
 
-.switch label input[type="checkbox"]:checked + .lever::after {
-   background-color: white !important;
-}
-
 .modeIcon {
    cursor: pointer;
+}
+
+.fixed-action-btn ul {
+   border-top: 1px solid white;
 }
