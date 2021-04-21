@@ -8,4 +8,4 @@ Hitesh Choudhary & Net Ninja
 
 # My website
 
-https://mohdaffancodes.github.io/cafeKing/
+https://cafeking.pages.dev/
