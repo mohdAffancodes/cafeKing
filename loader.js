@@ -5,21 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
    fnCarousel();
    //.calling functions
    fnValignIndicators();
-   //.launching the sidenav on right swipe for mobile only
-   if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-         navigator.userAgent
-      )
-   ) {
-      let tooltip = document.querySelector(".tooltipped");
-      tooltip.addEventListener("touchstart", () => {
-         setTimeout(() => {
-            let instance = M.Tooltip.init(tooltip, {});
-            instance.close();
-         }, 100);
-         //alert("touched");
-      });
-   }
+  
    var elem = document.querySelector(".fixed-action-btn");
    var instance = M.FloatingActionButton.init(elem, {
       toolbarEnabled: true,
@@ -138,13 +124,4 @@ function fnReadMore() {
       //.Changing btn text
       btn.innerHTML = "Read more";
    }
-}
-
-function fnOpenTooltip() {
-   var elem = document.querySelector(".tooltipped");
-   var instance = M.Tooltip.init(elem, {});
-   instance.open();
-   setTimeout(() => {
-      instance.close();
-   }, 1000 / 2);
 }
